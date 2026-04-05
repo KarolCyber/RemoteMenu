@@ -1,0 +1,526 @@
+type: sections
+image: /local/deye_menu.jpg
+elements:
+  - type: state-label
+    entity: sensor.deye_pv_power
+    style:
+      top: 25%
+      left: 50%
+      font-size: 16px
+      color: black
+  - type: state-icon
+    entity: switch.deye_inverter_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 45%
+      left: 20%
+  - type: state-label
+    entity: input_number.deye_max_discharge
+    tap_action:
+      action: call-service
+      service: input_number.set_value
+    style:
+      top: 70%
+      left: 80%
+      background-color: rgba(255, 255, 255, 0.5)
+cards: []
+sections:
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: select.deye_ac_coupling
+            style:
+              top: 13%
+              left: 60%
+              color: white
+          - type: state-label
+            entity: number.deye_generator_peak_shaving
+            style:
+              top: 44%
+              left: 16%
+              color: black
+          - type: conditional
+            conditions:
+              - entity: select.deye_ac_coupling
+                state: Load
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 30%
+                  left: 45%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(2)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_ac_coupling
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 17%
+                  left: 45%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(2)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/c96cef9a3895c00b4dc972f871135691
+          media_content_type: image/png
+          metadata:
+            title: _gen_porrt_use.png
+            thumbnail: /api/image/serve/c96cef9a3895c00b4dc972f871135691/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: switch.deye_export_surplus
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 33%
+              left: 75%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_export_surplus
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 28%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1.5)
+                  pointer-events: none
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 42%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1.5)
+                  pointer-events: none
+          - type: state-label
+            entity: number.deye_zero_export_power
+            style:
+              top: 61%
+              left: 79%
+              color: black
+          - type: state-label
+            entity: select.deye_energy_pattern
+            style:
+              top: 72%
+              left: 19%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_energy_pattern
+                state: Battery First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 32%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(2)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_energy_pattern
+                state: Load First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 59%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(2)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_work_mode
+            style:
+              top: 12%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Export First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 14%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Zero Export To Load
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 29%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Zero Export To CT
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 42%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/266aa58551bbd86e313bb333504c05c2
+          media_content_type: image/png
+          metadata:
+            title: system_work_mode_set1.png
+            thumbnail: /api/image/serve/266aa58551bbd86e313bb333504c05c2/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: sensor.deye_load_l1_power
+            tap_action:
+              action: more-info
+            style:
+              top: 18%
+              left: 27%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_l2_power
+            tap_action:
+              action: more-info
+            style:
+              top: 25%
+              left: 26%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_l3_power
+            tap_action:
+              action: more-info
+            style:
+              top: 32%
+              left: 27%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_power
+            tap_action:
+              action: more-info
+            style:
+              top: 6%
+              left: 20%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_l1_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 25%
+              left: 9.5%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_l2_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 18%
+              left: 9.5%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_load_l3_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 32%
+              left: 9.5%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_grid_power
+            tap_action:
+              action: more-info
+            style:
+              top: 6%
+              left: 48%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_grid_frequency
+            tap_action:
+              action: more-info
+            style:
+              top: 12%
+              left: 49%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_grid_l1_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 18%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_grid_l2_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 24%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_grid_l3_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 30%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_battery_power
+            tap_action:
+              action: more-info
+            style:
+              top: 55%
+              left: 17%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_battery
+            tap_action:
+              action: more-info
+            style:
+              top: 67%
+              left: 14%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_battery_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 73%
+              left: 17%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_battery_temperature
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 8%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_pv1_power
+            tap_action:
+              action: more-info
+            style:
+              top: 78%
+              left: 74%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_pv2_power
+            tap_action:
+              action: more-info
+            style:
+              top: 78%
+              left: 41%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_meter2_total_power
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 80%
+              font-size: 16px
+              color: black
+        image:
+          media_content_id: media-source://image_upload/f4c9340f5a705b9ba52f330a5ece6071
+          media_content_type: image/png
+          metadata:
+            title: _on2.png
+            thumbnail: /api/image/serve/f4c9340f5a705b9ba52f330a5ece6071/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: number.deye_battery_max_charging_current
+            style:
+              top: 44%
+              left: 76%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_max_discharging_current
+            style:
+              top: 57%
+              left: 76%
+              color: black
+        image:
+          media_content_id: media-source://image_upload/764645fd73fa5f2d0e730349f419d520
+          media_content_type: image/png
+          metadata:
+            title: battery_settings_set1.png
+            thumbnail: /api/image/serve/764645fd73fa5f2d0e730349f419d520/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        image:
+          media_content_id: media-source://image_upload/93949c8166222b267664c5628ef25598
+          media_content_type: image/png
+          metadata:
+            title: battery_settings_set2.png
+            thumbnail: /api/image/serve/93949c8166222b267664c5628ef25598/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+        elements:
+          - type: state-label
+            entity: number.deye_battery_generator_charging_start
+            style:
+              top: 24%
+              left: 29%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_grid_charging_start
+            style:
+              top: 24%
+              left: 62%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_grid_charging_current
+            style:
+              top: 38%
+              left: 62%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_generator_charging_current
+            style:
+              top: 38%
+              left: 29%
+              color: black
+          - type: state-label
+            entity: switch.deye_battery_grid_charging
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 52%
+              left: 79%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_battery_grid_charging
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 48%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1.5)
+                  pointer-events: none
+          - type: state-label
+            entity: switch.deye_battery_generator_charging
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 52%
+              left: 40%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_battery_generator_charging
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 48%
+                  left: 8%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1.5)
+                  pointer-events: none
+max_columns: 4
+title: menu
+visible:
+  - user: 239239e3d54e41d7a852a2d3b3eeca4b
