@@ -11,8 +11,8 @@ Projekt udostępnia wirtualny interfejs graficzny dla Home Assistant, który odw
 
 ![Prezentacja interfejsu](how_it_works.jpg)
 
-* **Wideo demonstracyjne:** [Zobacz jak to działa (how_it_works.mp4)]
-* https://youtube.com/shorts/SHAMe1pK2CI?feature=share
+* **Wideo demonstracyjne:** 
+* https://youtu.be/MXlp-e-ZpB0
 
   
 ## 🛠 Wymagania
