@@ -72,7 +72,7 @@ sections:
           media_content_id: media-source://image_upload/c96cef9a3895c00b4dc972f871135691
           media_content_type: image/png
           metadata:
-            title: _gen_porrt_use.png
+            title: _gen_port_use.png
             thumbnail: /api/image/serve/c96cef9a3895c00b4dc972f871135691/256x256
             media_class: image
             navigateIds:
@@ -125,6 +125,12 @@ sections:
             style:
               top: 61%
               left: 79%
+              color: black
+          - type: state-label
+            entity: number.deye_export_surplus_power
+            style:
+              top: 61%
+              left: 35%
               color: black
           - type: state-label
             entity: select.deye_energy_pattern
@@ -207,7 +213,7 @@ sections:
           media_content_id: media-source://image_upload/266aa58551bbd86e313bb333504c05c2
           media_content_type: image/png
           metadata:
-            title: system_work_mode_set1.png
+            title: _system_work_mode_set1.png
             thumbnail: /api/image/serve/266aa58551bbd86e313bb333504c05c2/256x256
             media_class: image
             navigateIds:
@@ -393,7 +399,7 @@ sections:
           media_content_id: media-source://image_upload/f4c9340f5a705b9ba52f330a5ece6071
           media_content_type: image/png
           metadata:
-            title: _on2.png
+            title: _on_view.png
             thumbnail: /api/image/serve/f4c9340f5a705b9ba52f330a5ece6071/256x256
             media_class: image
             navigateIds:
@@ -418,7 +424,7 @@ sections:
           media_content_id: media-source://image_upload/764645fd73fa5f2d0e730349f419d520
           media_content_type: image/png
           metadata:
-            title: battery_settings_set1.png
+            title: _battery_settings_set1.png
             thumbnail: /api/image/serve/764645fd73fa5f2d0e730349f419d520/256x256
             media_class: image
             navigateIds:
@@ -430,7 +436,7 @@ sections:
           media_content_id: media-source://image_upload/93949c8166222b267664c5628ef25598
           media_content_type: image/png
           metadata:
-            title: battery_settings_set2.png
+            title: _battery_settings_set2.png
             thumbnail: /api/image/serve/93949c8166222b267664c5628ef25598/256x256
             media_class: image
             navigateIds:
