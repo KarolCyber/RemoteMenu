@@ -39,7 +39,7 @@ sections:
           - type: state-label
             entity: number.deye_generator_peak_shaving
             style:
-              top: 44%
+              top: 43%
               left: 16%
               color: black
           - type: conditional
@@ -50,10 +50,10 @@ sections:
               - type: icon
                 icon: mdi:close
                 style:
-                  top: 30%
-                  left: 45%
+                  top: 28%
+                  left: 44%
                   "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(2)
+                  transform: scale(1)
                   z-index: 100
           - type: conditional
             conditions:
@@ -63,167 +63,67 @@ sections:
               - type: icon
                 icon: mdi:close
                 style:
-                  top: 17%
-                  left: 45%
+                  top: 16%
+                  left: 44%
                   "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(2)
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_io_mode
+            style:
+              top: 19%
+              left: 22%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_io_mode
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 23%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_io_mode
+                state: SmartLoad
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 51%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_io_mode
+                state: Microinverter
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 79%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
                   z-index: 100
         image:
-          media_content_id: media-source://media_source/local/_gen_port_use.png
+          media_content_id: media-source://image_upload/304fef7e329eef857eb4325f79cb42b9
           media_content_type: image/png
           metadata:
             title: _gen_port_use.png
-            thumbnail: null
+            thumbnail: /api/image/serve/304fef7e329eef857eb4325f79cb42b9/256x256
             media_class: image
-            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://media_source
-      - type: picture-elements
-        elements:
-          - type: state-label
-            entity: switch.deye_export_surplus
-            prefix: " "
-            state_display: " "
-            tap_action:
-              action: more-info
-            style:
-              top: 33%
-              left: 75%
-              background-color: rgba(128, 128, 128, 0.5)
-              width: 40px
-              height: 40px
-              border-radius: 5px
-              cursor: pointer
-          - type: conditional
-            conditions:
-              - entity: switch.deye_export_surplus
-                state: "on"
-            elements:
-              - type: icon
-                icon: mdi:close
-                tap_action:
-                  action: more-info
-                style:
-                  top: 28%
-                  left: 47%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1.5)
-                  pointer-events: none
-              - type: icon
-                icon: mdi:close
-                tap_action:
-                  action: more-info
-                style:
-                  top: 42%
-                  left: 47%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1.5)
-                  pointer-events: none
-          - type: state-label
-            entity: number.deye_zero_export_power
-            style:
-              top: 61%
-              left: 79%
-              color: black
-          - type: state-label
-            entity: number.deye_export_surplus_power
-            style:
-              top: 61%
-              left: 35%
-              color: black
-          - type: state-label
-            entity: select.deye_energy_pattern
-            style:
-              top: 72%
-              left: 19%
-              color: white
-          - type: conditional
-            conditions:
-              - entity: select.deye_energy_pattern
-                state: Battery First
-            elements:
-              - type: icon
-                icon: mdi:close
-                style:
-                  top: 74%
-                  left: 32%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(2)
-                  z-index: 100
-          - type: conditional
-            conditions:
-              - entity: select.deye_energy_pattern
-                state: Load First
-            elements:
-              - type: icon
-                icon: mdi:close
-                style:
-                  top: 74%
-                  left: 59%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(2)
-                  z-index: 100
-          - type: state-label
-            entity: select.deye_work_mode
-            style:
-              top: 12%
-              left: 16%
-              color: white
-          - type: conditional
-            conditions:
-              - entity: select.deye_work_mode
-                state: Export First
-            elements:
-              - type: icon
-                icon: mdi:close
-                style:
-                  top: 14%
-                  left: 2%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1)
-                  z-index: 100
-          - type: conditional
-            conditions:
-              - entity: select.deye_work_mode
-                state: Zero Export To Load
-            elements:
-              - type: icon
-                icon: mdi:close
-                style:
-                  top: 29%
-                  left: 2%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1)
-                  z-index: 100
-          - type: conditional
-            conditions:
-              - entity: select.deye_work_mode
-                state: Zero Export To CT
-            elements:
-              - type: icon
-                icon: mdi:close
-                style:
-                  top: 42%
-                  left: 2%
-                  "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1)
-                  z-index: 100
-        image:
-          media_content_id: media-source://media_source/local/_system_work_mode_set1.png
-          media_content_type: image/png
-          metadata:
-            title: _system_work_mode_set1.png
-            thumbnail: null
-            media_class: image
-            children_media_class: null
-            navigateIds:
-              - {}
-              - media_content_type: app
-                media_content_id: media-source://media_source
-  - type: grid
-    cards:
+                media_content_id: media-source://image_upload
       - type: picture-elements
         elements:
           - type: state-label
@@ -231,8 +131,8 @@ sections:
             tap_action:
               action: more-info
             style:
-              top: 18%
-              left: 27%
+              top: 19%
+              left: 25%
               font-size: 16px
               color: black
           - type: state-label
@@ -241,7 +141,7 @@ sections:
               action: more-info
             style:
               top: 25%
-              left: 26%
+              left: 25%
               font-size: 16px
               color: black
           - type: state-label
@@ -250,7 +150,7 @@ sections:
               action: more-info
             style:
               top: 32%
-              left: 27%
+              left: 25%
               font-size: 16px
               color: black
           - type: state-label
@@ -259,7 +159,7 @@ sections:
               action: more-info
             style:
               top: 6%
-              left: 20%
+              left: 18%
               font-size: 16px
               color: black
           - type: state-label
@@ -268,7 +168,7 @@ sections:
               action: more-info
             style:
               top: 25%
-              left: 9.5%
+              left: 8%
               font-size: 16px
               color: black
           - type: state-label
@@ -277,7 +177,7 @@ sections:
               action: more-info
             style:
               top: 18%
-              left: 9.5%
+              left: 8%
               font-size: 16px
               color: black
           - type: state-label
@@ -286,7 +186,7 @@ sections:
               action: more-info
             style:
               top: 32%
-              left: 9.5%
+              left: 8%
               font-size: 16px
               color: black
           - type: state-label
@@ -295,7 +195,7 @@ sections:
               action: more-info
             style:
               top: 6%
-              left: 48%
+              left: 52%
               font-size: 16px
               color: black
           - type: state-label
@@ -304,7 +204,7 @@ sections:
               action: more-info
             style:
               top: 12%
-              left: 49%
+              left: 51%
               font-size: 16px
               color: black
           - type: state-label
@@ -348,8 +248,8 @@ sections:
             tap_action:
               action: more-info
             style:
-              top: 67%
-              left: 14%
+              top: 68%
+              left: 12%
               font-size: 16px
               color: black
           - type: state-label
@@ -357,8 +257,8 @@ sections:
             tap_action:
               action: more-info
             style:
-              top: 73%
-              left: 17%
+              top: 74%
+              left: 15%
               font-size: 16px
               color: black
           - type: state-label
@@ -367,7 +267,7 @@ sections:
               action: more-info
             style:
               top: 86%
-              left: 8%
+              left: 7%
               font-size: 16px
               color: black
           - type: state-label
@@ -375,8 +275,8 @@ sections:
             tap_action:
               action: more-info
             style:
-              top: 78%
-              left: 74%
+              top: 73%
+              left: 83%
               font-size: 16px
               color: black
           - type: state-label
@@ -384,8 +284,8 @@ sections:
             tap_action:
               action: more-info
             style:
-              top: 78%
-              left: 41%
+              top: 73%
+              left: 51%
               font-size: 16px
               color: black
           - type: state-label
@@ -394,23 +294,93 @@ sections:
               action: more-info
             style:
               top: 86%
-              left: 80%
+              left: 87%
               font-size: 16px
               color: black
         image:
-          media_content_id: media-source://media_source/local/_on_view.png
+          media_content_id: media-source://image_upload/0f575a09b136451c58b02576a10901e0
           media_content_type: image/png
           metadata:
             title: _on_view.png
-            thumbnail: null
+            thumbnail: /api/image/serve/0f575a09b136451c58b02576a10901e0/256x256
             media_class: image
-            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://media_source
+                media_content_id: media-source://image_upload
+  - type: grid
+    cards:
       - type: picture-elements
         elements:
+          - type: state-label
+            entity: select.deye_battery_control_mode
+            style:
+              top: 20%
+              left: 50%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_battery_control_mode
+                state: Lithium
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 28%
+                  left: 3%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_battery_control_mode
+                state: Lead-Battery, four-stage charging method
+            elements:
+              - type: state-label
+                entity: select.deye_battery_operation_mode
+                style:
+                  top: 75%
+                  left: 15%
+                  color: white
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: Voltage
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 39%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: Capacity
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 50%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: No Battery
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 61%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
           - type: state-label
             entity: number.deye_battery_max_charging_current
             style:
@@ -423,31 +393,24 @@ sections:
               top: 57%
               left: 76%
               color: black
+          - type: state-label
+            entity: number.deye_battery_capacity
+            style:
+              top: 32%
+              left: 76%
+              color: black
         image:
-          media_content_id: media-source://media_source/local/_battery_settings_set1.png
+          media_content_id: media-source://image_upload/13fbdd3630d23dcadcabf2f522ad7093
           media_content_type: image/png
           metadata:
             title: _battery_settings_set1.png
-            thumbnail: null
+            thumbnail: /api/image/serve/13fbdd3630d23dcadcabf2f522ad7093/256x256
             media_class: image
-            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://media_source
+                media_content_id: media-source://image_upload
       - type: picture-elements
-        image:
-          media_content_id: media-source://media_source/local/_battery_settings_set2.png
-          media_content_type: image/png
-          metadata:
-            title: _battery_settings_set2.png
-            thumbnail: null
-            media_class: image
-            children_media_class: null
-            navigateIds:
-              - {}
-              - media_content_type: app
-                media_content_id: media-source://media_source
         elements:
           - type: state-label
             entity: number.deye_battery_generator_charging_start
@@ -500,7 +463,7 @@ sections:
                   top: 48%
                   left: 47%
                   "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1.5)
+                  transform: scale(1)
                   pointer-events: none
           - type: state-label
             entity: switch.deye_battery_generator_charging
@@ -529,8 +492,747 @@ sections:
                   top: 48%
                   left: 8%
                   "--iron-icon-fill-color": "#FF0000"
-                  transform: scale(1.5)
+                  transform: scale(1)
                   pointer-events: none
+        image:
+          media_content_id: media-source://image_upload/63f26b9fe70130b8252718bfa6dc2dcb
+          media_content_type: image/png
+          metadata:
+            title: _battery_settings_set2.png
+            thumbnail: /api/image/serve/63f26b9fe70130b8252718bfa6dc2dcb/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: number.deye_battery_restart_soc
+            style:
+              top: 74%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_low_soc
+            style:
+              top: 58%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: number.deye_battery_shutdown_soc
+            style:
+              top: 43%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: select.deye_battery_bms_type
+            style:
+              top: 28%
+              left: 46%
+              color: black
+        image:
+          media_content_id: media-source://image_upload/f11957722005d57adf0bde95bf825bff
+          media_content_type: image/png
+          metadata:
+            title: _battery_settings_set3.png
+            thumbnail: /api/image/serve/f11957722005d57adf0bde95bf825bff/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: switch.deye_grid_peak_shaving
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 14%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 30px
+              height: 30px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_grid_peak_shaving
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 89%
+                  left: 4%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+          - type: state-label
+            entity: switch.deye_export_surplus
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 33%
+              left: 75%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_export_surplus
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 28%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 42%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+          - type: state-label
+            entity: number.deye_zero_export_power
+            style:
+              top: 62%
+              left: 79%
+              color: black
+          - type: state-label
+            entity: number.deye_grid_peak_shaving
+            style:
+              top: 92%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_export_surplus_power
+            style:
+              top: 62%
+              left: 35%
+              color: black
+          - type: state-label
+            entity: number.deye_pv_power
+            style:
+              top: 21%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: select.deye_energy_pattern
+            style:
+              top: 72%
+              left: 19%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_energy_pattern
+                state: Battery First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 32%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_energy_pattern
+                state: Load First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 59%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_work_mode
+            style:
+              top: 12%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Export First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 15%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Zero Export To Load
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 29%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_work_mode
+                state: Zero Export To CT
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 42%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/fc47d72b75b8ef2b330764bcd861992e
+          media_content_type: image/png
+          metadata:
+            title: _system_work_mode_set1.png
+            thumbnail: /api/image/serve/fc47d72b75b8ef2b330764bcd861992e/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: time.deye_program_1_time
+            style:
+              top: 36%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_2_time
+            style:
+              top: 36%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_1_power
+            style:
+              top: 36%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_1_soc
+            style:
+              top: 36%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_program_2_time
+            style:
+              top: 47%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_3_time
+            style:
+              top: 47%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_2_power
+            style:
+              top: 47%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_2_soc
+            style:
+              top: 47%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_program_3_time
+            style:
+              top: 58%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_4_time
+            style:
+              top: 58%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_3_power
+            style:
+              top: 58%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_3_soc
+            style:
+              top: 58%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_program_4_time
+            style:
+              top: 70%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_5_time
+            style:
+              top: 70%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_4_power
+            style:
+              top: 70%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_4_soc
+            style:
+              top: 70%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_program_5_time
+            style:
+              top: 82%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_6_time
+            style:
+              top: 82%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_5_power
+            style:
+              top: 82%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_5_soc
+            style:
+              top: 82%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_program_6_time
+            style:
+              top: 93%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_program_1_time
+            style:
+              top: 93%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: number.deye_program_6_power
+            style:
+              top: 93%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_program_6_soc
+            style:
+              top: 93%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: select.deye_program_1_charging
+            style:
+              top: 36%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_1_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_1_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_1_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_program_2_charging
+            style:
+              top: 47%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_2_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_2_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_2_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_program_3_charging
+            style:
+              top: 59%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_3_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_3_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_3_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_program_4_charging
+            style:
+              top: 70%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_4_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_4_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_4_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(2)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_program_5_charging
+            style:
+              top: 81%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_5_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_5_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_5_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_program_6_charging
+            style:
+              top: 92%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_6_charging
+                state: Grid
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_6_charging
+                state: Generator
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_program_6_charging
+                state: Both
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_time_of_use
+            style:
+              top: 18%
+              left: 75%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_time_of_use
+                state: Week
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 15%
+                  left: 41%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_time_of_use
+                state: Enabled
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 15%
+                  left: 41%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/63cfe262cff9663815c43fa3aec59796
+          media_content_type: image/png
+          metadata:
+            title: _system_work_mode_set2.png
+            thumbnail: /api/image/serve/63cfe262cff9663815c43fa3aec59796/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
 max_columns: 4
 title: menu
 visible:
