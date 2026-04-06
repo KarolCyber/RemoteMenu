@@ -69,16 +69,17 @@ sections:
                   transform: scale(2)
                   z-index: 100
         image:
-          media_content_id: media-source://image_upload/c96cef9a3895c00b4dc972f871135691
+          media_content_id: media-source://media_source/local/_gen_port_use.png
           media_content_type: image/png
           metadata:
             title: _gen_port_use.png
-            thumbnail: /api/image/serve/c96cef9a3895c00b4dc972f871135691/256x256
+            thumbnail: null
             media_class: image
+            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://image_upload
+                media_content_id: media-source://media_source
       - type: picture-elements
         elements:
           - type: state-label
@@ -210,16 +211,17 @@ sections:
                   transform: scale(1)
                   z-index: 100
         image:
-          media_content_id: media-source://image_upload/266aa58551bbd86e313bb333504c05c2
+          media_content_id: media-source://media_source/local/_system_work_mode_set1.png
           media_content_type: image/png
           metadata:
             title: _system_work_mode_set1.png
-            thumbnail: /api/image/serve/266aa58551bbd86e313bb333504c05c2/256x256
+            thumbnail: null
             media_class: image
+            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://image_upload
+                media_content_id: media-source://media_source
   - type: grid
     cards:
       - type: picture-elements
@@ -396,16 +398,17 @@ sections:
               font-size: 16px
               color: black
         image:
-          media_content_id: media-source://image_upload/f4c9340f5a705b9ba52f330a5ece6071
+          media_content_id: media-source://media_source/local/_on_view.png
           media_content_type: image/png
           metadata:
             title: _on_view.png
-            thumbnail: /api/image/serve/f4c9340f5a705b9ba52f330a5ece6071/256x256
+            thumbnail: null
             media_class: image
+            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://image_upload
+                media_content_id: media-source://media_source
       - type: picture-elements
         elements:
           - type: state-label
@@ -421,28 +424,30 @@ sections:
               left: 76%
               color: black
         image:
-          media_content_id: media-source://image_upload/764645fd73fa5f2d0e730349f419d520
+          media_content_id: media-source://media_source/local/_battery_settings_set1.png
           media_content_type: image/png
           metadata:
             title: _battery_settings_set1.png
-            thumbnail: /api/image/serve/764645fd73fa5f2d0e730349f419d520/256x256
+            thumbnail: null
             media_class: image
+            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://image_upload
+                media_content_id: media-source://media_source
       - type: picture-elements
         image:
-          media_content_id: media-source://image_upload/93949c8166222b267664c5628ef25598
+          media_content_id: media-source://media_source/local/_battery_settings_set2.png
           media_content_type: image/png
           metadata:
             title: _battery_settings_set2.png
-            thumbnail: /api/image/serve/93949c8166222b267664c5628ef25598/256x256
+            thumbnail: null
             media_class: image
+            children_media_class: null
             navigateIds:
               - {}
               - media_content_type: app
-                media_content_id: media-source://image_upload
+                media_content_id: media-source://media_source
         elements:
           - type: state-label
             entity: number.deye_battery_generator_charging_start
