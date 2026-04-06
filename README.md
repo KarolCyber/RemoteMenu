@@ -11,7 +11,7 @@ Projekt udostępnia wirtualny interfejs graficzny dla Home Assistant, który odw
 
 ![Prezentacja interfejsu](how_it_works.jpg)
 
-* **Wideo demonstracyjne:** [Zobacz jak to działa (how_it_works.mov)](how_it_works.mov)
+* **Wideo demonstracyjne:** [Zobacz jak to działa (how_it_works.mp4)](how_it_works.mp4)
 
 ## 🛠 Wymagania
 * **Home Assistant** (stabilna wersja).
@@ -24,11 +24,11 @@ Otwórz plik `ha_view_code.txt` i skopiuj jego zawartość.
 
 ### 2. Konfiguracja karty w HA
 1.  **Dodanie karty:**
-    * Obejrzyj film: `krok_1_dodanie_karty.mov`.
+    * Obejrzyj film: `krok_1_dodanie_karty.mp4`.
     * W Dashboardzie HA dodaj kartę **Manual** i wklej skopiowany kod.
 
 2.  **Dodanie grafik:**
-    * Obejrzyj film: `krok_2_dodanie_zdjęć_do_karty.mov`.
+    * Obejrzyj film: `krok_2_dodanie_zdjęć_do_karty.mp4`.
     * Wgraj pliki graficzne (tła) do folderu `/www/` w Home Assistant.
 
 ---
