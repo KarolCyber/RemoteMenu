@@ -1,6 +1,8 @@
 # Zdalne Menu Falownika: Deye SUN-15K-SG05LP3-EU-SM2
 
-Projekt udostępnia wirtualny interfejs graficzny dla Home Assistant, który odwzorowuje fizyczny panel sterowania falownika DEYE. Umożliwia to intuicyjne sterowanie i podgląd parametrów bezpośrednio z poziomu Dashboardu.
+Projekt stworzony dla zabawy. Działa, bardzo się przydaje, ale nadal ma dużo do poprawy. Wszystko w swoim czasie.
+
+Udostępnia wirtualny interfejs graficzny dla Home Assistant, który odwzorowuje fizyczny panel sterowania falownika DEYE. Umożliwia to intuicyjne sterowanie i podgląd parametrów bezpośrednio z poziomu Dashboardu.
 
 ---
 
