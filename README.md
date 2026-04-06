@@ -11,8 +11,10 @@ Projekt udostępnia wirtualny interfejs graficzny dla Home Assistant, który odw
 
 ![Prezentacja interfejsu](how_it_works.jpg)
 
-* **Wideo demonstracyjne:** [Zobacz jak to działa (how_it_works.mp4)](how_it_works.mp4)
+* **Wideo demonstracyjne:** [Zobacz jak to działa (how_it_works.mp4)]
+* https://youtube.com/shorts/SHAMe1pK2CI?feature=share
 
+  
 ## 🛠 Wymagania
 * **Home Assistant** (stabilna wersja).
 * **Integracja Solarman** (mapowanie encji bazuje na tej integracji).
@@ -25,10 +27,12 @@ Otwórz plik `ha_view_code.txt` i skopiuj jego zawartość.
 ### 2. Konfiguracja karty w HA
 1.  **Dodanie karty:**
     * Obejrzyj film: `krok_1_dodanie_karty.mp4`.
+    * https://youtu.be/3C1nnm_t9F0
     * W Dashboardzie HA dodaj kartę **Manual** i wklej skopiowany kod.
 
 2.  **Dodanie grafik:**
     * Obejrzyj film: `krok_2_dodanie_zdjęć_do_karty.mp4`.
+    * https://youtu.be/3C1nnm_t9F0
     * Wgraj pliki graficzne (tła) do folderu `/www/` w Home Assistant.
 
 ---
