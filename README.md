@@ -1,4 +1,4 @@
-# Zdalne Menu Falownika: DEYE SUN-15k-SG05LP3 (Home Assistant)
+# Zdalne Menu Falownika: DEYE SUN-15k-SG05LP3
 
 Projekt udostępnia wirtualny interfejs graficzny dla Home Assistant, który odwzorowuje fizyczny panel sterowania falownika DEYE. Umożliwia to intuicyjne sterowanie i podgląd parametrów bezpośrednio z poziomu Dashboardu.
 
