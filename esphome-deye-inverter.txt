@@ -1,0 +1,1134 @@
+type: sections
+image: /local/deye_menu.jpg
+elements:
+  - type: state-label
+    entity: sensor.deye_pv_power
+    style:
+      top: 25%
+      left: 50%
+      font-size: 16px
+      color: black
+  - type: state-icon
+    entity: switch.deye_inverter_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 45%
+      left: 20%
+  - type: state-label
+    entity: input_number.deye_max_discharge
+    tap_action:
+      action: call-service
+      service: input_number.set_value
+    style:
+      top: 70%
+      left: 80%
+      background-color: rgba(255, 255, 255, 0.5)
+cards: []
+sections:
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: select.deye_inverter_ac_couple
+            style:
+              top: 13%
+              left: 60%
+              color: white
+          - type: state-label
+            entity: number.deye_inverter_generator_peak_shaving_power
+            style:
+              top: 43%
+              left: 16%
+              color: black
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_ac_couple
+                state: On Load Side
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 28%
+                  left: 44%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_ac_couple
+                state: On Grid Side
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 16%
+                  left: 44%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_inverter_generator_port_use
+            style:
+              top: 19%
+              left: 22%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_generator_port_use
+                state: Generator Input
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 23%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_generator_port_use
+                state: SmartLoad Output
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 51%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_generator_port_use
+                state: Micro Inverter Input
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 79%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/eef3af9d61fe4e914e103ccfca07ff74
+          media_content_type: image/png
+          metadata:
+            title: _gen_port_use.png
+            thumbnail: /api/image/serve/eef3af9d61fe4e914e103ccfca07ff74/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: sensor.deye_inverter_load_l1_power
+            tap_action:
+              action: more-info
+            style:
+              top: 19%
+              left: 25%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_l2_power
+            tap_action:
+              action: more-info
+            style:
+              top: 25%
+              left: 25%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_l3_power
+            tap_action:
+              action: more-info
+            style:
+              top: 32%
+              left: 25%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_power
+            tap_action:
+              action: more-info
+            style:
+              top: 6%
+              left: 18%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_l1_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 25%
+              left: 8%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_l2_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 18%
+              left: 8%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_load_l3_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 32%
+              left: 8%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_grid_power
+            tap_action:
+              action: more-info
+            style:
+              top: 6%
+              left: 52%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_grid_frequency
+            tap_action:
+              action: more-info
+            style:
+              top: 12%
+              left: 51%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_grid_l1_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 18%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_grid_l2_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 24%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_grid_l3_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 30%
+              left: 39%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_battery_power
+            tap_action:
+              action: more-info
+            style:
+              top: 55%
+              left: 17%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_battery
+            tap_action:
+              action: more-info
+            style:
+              top: 68%
+              left: 12%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_battery_voltage
+            tap_action:
+              action: more-info
+            style:
+              top: 74%
+              left: 15%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_battery_temperature
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 7%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_pv1_power
+            tap_action:
+              action: more-info
+            style:
+              top: 73%
+              left: 83%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_inverter_pv2_power
+            tap_action:
+              action: more-info
+            style:
+              top: 73%
+              left: 51%
+              font-size: 16px
+              color: black
+          - type: state-label
+            entity: sensor.deye_meter2_total_power
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 87%
+              font-size: 16px
+              color: black
+        image:
+          media_content_id: media-source://image_upload/3f6f8ce4fb2493576bc1a730e9c956c8
+          media_content_type: image/png
+          metadata:
+            title: _on_view.png
+            thumbnail: /api/image/serve/3f6f8ce4fb2493576bc1a730e9c956c8/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: select.deye_inverter_battery_control_mode
+            style:
+              top: 20%
+              left: 50%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_battery_control_mode
+                state: Lithium (External BMS)
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 28%
+                  left: 3%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_battery_control_mode
+                state: Lead (Deye BMS)
+            elements:
+              - type: state-label
+                entity: select.deye_battery_operation_mode
+                style:
+                  top: 75%
+                  left: 15%
+                  color: white
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: Voltage
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 39%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: Capacity
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 50%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
+              - type: conditional
+                conditions:
+                  - entity: select.deye_battery_operation_mode
+                    state: No Battery
+                elements:
+                  - type: icon
+                    icon: mdi:close
+                    style:
+                      top: 61%
+                      left: 3%
+                      "--iron-icon-fill-color": "#FF0000"
+                      transform: scale(1)
+                      z-index: 100
+          - type: state-label
+            entity: number.deye_inverter_maximum_battery_charge_current
+            style:
+              top: 44%
+              left: 76%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_maximum_battery_discharge_current
+            style:
+              top: 57%
+              left: 76%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_battery_capacity
+            style:
+              top: 32%
+              left: 76%
+              color: black
+        image:
+          media_content_id: media-source://image_upload/cb113627ba793ae6cbe5425e60ce65d7
+          media_content_type: image/png
+          metadata:
+            title: _battery_settings_set1.png
+            thumbnail: /api/image/serve/cb113627ba793ae6cbe5425e60ce65d7/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: number.deye_inverter_battery_generator_charging_start_soc
+            style:
+              top: 24%
+              left: 29%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_battery_grid_charging_start_soc
+            style:
+              top: 24%
+              left: 62%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_maximum_battery_grid_charge_current
+            style:
+              top: 38%
+              left: 62%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_battery_generator_charging_current
+            style:
+              top: 38%
+              left: 29%
+              color: black
+          - type: state-label
+            entity: switch.deye_inverter_battery_grid_charging
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 52%
+              left: 79%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_battery_grid_charging
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 48%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+          - type: state-label
+            entity: switch.deye_inverter_battery_generator_charging
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 52%
+              left: 40%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_battery_generator_charging
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 48%
+                  left: 8%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+        image:
+          media_content_id: media-source://image_upload/70657049351cbecd2a1e3610704def27
+          media_content_type: image/png
+          metadata:
+            title: _battery_settings_set2.png
+            thumbnail: /api/image/serve/70657049351cbecd2a1e3610704def27/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: number.deye_inverter_battery_restart_soc
+            style:
+              top: 74%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_battery_low_soc
+            style:
+              top: 58%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_battery_shutdown_soc
+            style:
+              top: 43%
+              left: 46%
+              color: black
+          - type: state-label
+            entity: select.deye_inverter_battery_bms_type
+            style:
+              top: 28%
+              left: 46%
+              color: black
+        image:
+          media_content_id: media-source://image_upload/e15036d5fa8869621ca99ae599b96ba3
+          media_content_type: image/png
+          metadata:
+            title: _battery_settings_set3.png
+            thumbnail: /api/image/serve/e15036d5fa8869621ca99ae599b96ba3/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+  - type: grid
+    cards:
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: switch.deye_inverter_grid_peak_shaving_enable
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 86%
+              left: 14%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 30px
+              height: 30px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_grid_peak_shaving_enable
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 89%
+                  left: 4%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+          - type: state-label
+            entity: switch.deye_inverter_solar_sell
+            prefix: " "
+            state_display: " "
+            tap_action:
+              action: more-info
+            style:
+              top: 33%
+              left: 75%
+              background-color: rgba(128, 128, 128, 0.5)
+              width: 40px
+              height: 40px
+              border-radius: 5px
+              cursor: pointer
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_solar_sell
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 28%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+              - type: icon
+                icon: mdi:close
+                tap_action:
+                  action: more-info
+                style:
+                  top: 42%
+                  left: 47%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  pointer-events: none
+          - type: state-label
+            entity: number.deye_inverter_zero_export_power
+            style:
+              top: 62%
+              left: 79%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_grid_peak_shaving_power
+            style:
+              top: 92%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_max_sell_power
+            style:
+              top: 62%
+              left: 35%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_max_solar_power
+            style:
+              top: 21%
+              left: 50%
+              color: black
+          - type: state-label
+            entity: select.deye_inverter_energy_management_priority
+            style:
+              top: 72%
+              left: 19%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_energy_management_priority
+                state: Battery First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 32%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_energy_management_priority
+                state: Load First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 74%
+                  left: 59%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: select.deye_inverter_system_work_mode
+            style:
+              top: 12%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_system_work_mode
+                state: Selling First
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 15%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_system_work_mode
+                state: Zero Export To Load
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 29%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: conditional
+            conditions:
+              - entity: select.deye_inverter_system_work_mode
+                state: Zero Export To CT
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 42%
+                  left: 2%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/742f6df21e2f50080f0342765a263ad2
+          media_content_type: image/png
+          metadata:
+            title: _system_work_mode_set1.png
+            thumbnail: /api/image/serve/742f6df21e2f50080f0342765a263ad2/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_1_start
+            style:
+              top: 36%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_2_start
+            style:
+              top: 36%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_1_out_power
+            style:
+              top: 36%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_1_soc
+            style:
+              top: 36%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_2_start
+            style:
+              top: 47%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_3_start
+            style:
+              top: 47%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_2_out_power
+            style:
+              top: 47%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_2_soc
+            style:
+              top: 47%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_3_start
+            style:
+              top: 58%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_4_start
+            style:
+              top: 58%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_3_out_power
+            style:
+              top: 58%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_3_soc
+            style:
+              top: 58%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_4_start
+            style:
+              top: 70%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_5_start
+            style:
+              top: 70%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_4_out_power
+            style:
+              top: 70%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_4_soc
+            style:
+              top: 70%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_5_start
+            style:
+              top: 82%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_6_start
+            style:
+              top: 82%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_5_out_power
+            style:
+              top: 82%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_5_soc
+            style:
+              top: 82%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_6_start
+            style:
+              top: 93%
+              left: 38%
+              color: black
+          - type: state-label
+            entity: time.deye_inverter_time_of_use_1_start
+            style:
+              top: 93%
+              left: 51%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_6_out_power
+            style:
+              top: 93%
+              left: 65%
+              color: black
+          - type: state-label
+            entity: number.deye_inverter_time_of_use_6_soc
+            style:
+              top: 93%
+              left: 78%
+              color: black
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_1_grid_charge
+            style:
+              top: 36%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_1_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_1_gen
+            style:
+              top: 36%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_1_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 32%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_2_grid_charge
+            style:
+              top: 47%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_2_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_2_gen
+            style:
+              top: 47%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_2_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 44%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_3_grid_charge
+            style:
+              top: 59%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_3_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_3_gen
+            style:
+              top: 59%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_3_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 55%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_4_grid_charge
+            style:
+              top: 70%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_4_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_4_gen
+            style:
+              top: 70%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_4_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 66%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_5_grid_charge
+            style:
+              top: 81%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_5_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_5_gen
+            style:
+              top: 81%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_5_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 77%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_6_grid_charge
+            style:
+              top: 92%
+              left: 16%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_6_grid_charge
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 6%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use_6_gen
+            style:
+              top: 92%
+              left: 29%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use_6_gen
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 89%
+                  left: 20%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+          - type: state-label
+            entity: switch.deye_inverter_time_of_use
+            style:
+              top: 18%
+              left: 75%
+              color: white
+          - type: conditional
+            conditions:
+              - entity: switch.deye_inverter_time_of_use
+                state: "on"
+            elements:
+              - type: icon
+                icon: mdi:close
+                style:
+                  top: 15%
+                  left: 41%
+                  "--iron-icon-fill-color": "#FF0000"
+                  transform: scale(1)
+                  z-index: 100
+        image:
+          media_content_id: media-source://image_upload/a72e2f96ec8769377ca87933be6277e9
+          media_content_type: image/png
+          metadata:
+            title: _system_work_mode_set2.png
+            thumbnail: /api/image/serve/a72e2f96ec8769377ca87933be6277e9/256x256
+            media_class: image
+            navigateIds:
+              - {}
+              - media_content_type: app
+                media_content_id: media-source://image_upload
+max_columns: 4
+title: Deye menu
